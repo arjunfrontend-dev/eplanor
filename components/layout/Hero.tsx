@@ -44,7 +44,7 @@ export default function Hero() {
       {/* Parallax Background Image */}
       <motion.div className="absolute inset-0" style={{ y: yImage }}>
         <Image
-          src="/assets/images/hero-bg.jpeg"
+          src="./assets/images/hero-bg.jpeg"
           alt="Hero Background"
           fill
           priority
