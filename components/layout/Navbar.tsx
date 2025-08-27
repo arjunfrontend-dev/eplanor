@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import {  Home,
+import {
+  Home,
   Box,
   Wrench,
   Info,
@@ -12,7 +13,8 @@ import {  Home,
   HelpCircle,
   FileText,
   Code,
-  Users, } from "lucide-react";
+  Users,
+} from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +24,11 @@ export default function Navbar() {
 
   const navItems = [
     // { name: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
-      { name: "About", href: "/about", icon: <Info className="w-4 h-4" /> },
+    {
+      name: "About",
+      href: "/eplanor/about",
+      icon: <Info className="w-4 h-4" />,
+    },
 
     {
       name: "Products",
@@ -33,7 +39,6 @@ export default function Navbar() {
         { name: "Blaze LMS", href: "/products/product-b" },
         { name: "CyberCop", href: "/products/product-a" },
         { name: "eCommerce", href: "/products/product-b" },
-        
       ],
     },
     {
@@ -41,20 +46,50 @@ export default function Navbar() {
       href: "#",
       icon: <Wrench className="w-4 h-4" />,
       dropdown: [
-      { name: "Services Overview", href: "/services/service-a", icon: <Code className="w-4 h-4" /> },
-      { name: "Cloud Solutions", href: "/services/service-b", icon: <Users className="w-4 h-4" /> },
-       { name: "Cybersecurity", href: "/services/service-b", icon: <Users className="w-4 h-4" /> },
-        { name: "Apps Development", href: "/services/service-b", icon: <Users className="w-4 h-4" /> },
-         { name: "Resource Planning", href: "/services/service-b", icon: <Users className="w-4 h-4" /> },
-          { name: "Contract Staffing", href: "/services/service-b", icon: <Users className="w-4 h-4" /> },
-
+        {
+          name: "Services Overview",
+          href: "/services/service-a",
+          icon: <Code className="w-4 h-4" />,
+        },
+        {
+          name: "Cloud Solutions",
+          href: "/services/service-b",
+          icon: <Users className="w-4 h-4" />,
+        },
+        {
+          name: "Cybersecurity",
+          href: "/services/service-b",
+          icon: <Users className="w-4 h-4" />,
+        },
+        {
+          name: "Apps Development",
+          href: "/services/service-b",
+          icon: <Users className="w-4 h-4" />,
+        },
+        {
+          name: "Resource Planning",
+          href: "/services/service-b",
+          icon: <Users className="w-4 h-4" />,
+        },
+        {
+          name: "Contract Staffing",
+          href: "/services/service-b",
+          icon: <Users className="w-4 h-4" />,
+        },
       ],
     },
-  // { name: "Case Studies", href: "/case-studies", icon: <FileText className="w-4 h-4" /> },
-  { name: "Careers", href: "/careers", icon: <Briefcase className="w-4 h-4" /> },
-  // { name: "FAQ", href: "/faq", icon: <HelpCircle className="w-4 h-4" /> },
-  { name: "Contact", href: "/contact", icon: <Mail className="w-4 h-4" /> },
-    
+    // { name: "Case Studies", href: "/case-studies", icon: <FileText className="w-4 h-4" /> },
+    {
+      name: "Careers",
+      href: "/eplanor/careers",
+      icon: <Briefcase className="w-4 h-4" />,
+    },
+    // { name: "FAQ", href: "/faq", icon: <HelpCircle className="w-4 h-4" /> },
+    {
+      name: "Contact",
+      href: "/eplanor/contact",
+      icon: <Mail className="w-4 h-4" />,
+    },
   ];
 
   useEffect(() => {
@@ -65,7 +100,10 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setOpenDropdown(null);
       }
     };
@@ -80,7 +118,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
- <a href="/" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <Image
             src="./assets/images/logo.png"
             alt="Logo"
