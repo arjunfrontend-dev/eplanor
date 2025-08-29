@@ -8,7 +8,7 @@ export interface Product {
   image: string;
   features: string[];
   benefits: string[];
-  pricing: string;
+  pricing?: string;
   icon: string;
 }
 
