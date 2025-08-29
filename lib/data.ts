@@ -1,4 +1,4 @@
-export interface Product {
+export interface Products {
   id: string;
   name: string;
   slug: string;
@@ -27,7 +27,7 @@ export interface Service {
   icon: string;
 }
 
-export const products: Product[] = [
+export const products: Products[] = [
   {
     id: '1',
     name: 'eplanor CloudX',
