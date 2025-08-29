@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import { Zap, Twitter, Linkedin, Github, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import Link from "next/link";
+import { Zap, Twitter, Linkedin, Github, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import Image from "next/image";
-
 
 const Footer = () => {
   return (
@@ -14,16 +13,13 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                          src="./assets/images/logo.png"
-                          alt="Logo"
-                          width={20}
-                          height={20}
-                          className="rounded-full"
-                          priority
-                        />
-              {/* <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div> */}
+                src="/assets/images/logo.png"
+                alt="Logo"
+                width={20}
+                height={20}
+                className="rounded-full"
+                priority
+              />
               <span className="text-xl font-bold">eplanor</span>
             </div>
             <p className="text-gray-300 mb-6">
@@ -41,9 +37,30 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
-              <li><Link href="/products" className="text-gray-300 hover:text-white transition-colors">Products</Link></li>
-              <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -51,9 +68,30 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -81,9 +119,24 @@ const Footer = () => {
             © 2025 eplanor. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</Link>
-            <Link href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Terms of Service</Link>
-            <Link href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Cookie Policy</Link>
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white text-sm transition-colors"
+            >
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>
