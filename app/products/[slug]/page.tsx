@@ -21,7 +21,7 @@ const ProductDetailPage = ({ params }: ProductDetailPageProps) => {
     notFound();
   }
 
-  return <ProductDetailClient product={{ ...product, pricing: product.pricing ?? "" }}  />;
+  return <ProductDetailClient product={product} />;
 };
 
 export default ProductDetailPage;
