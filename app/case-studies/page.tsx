@@ -120,7 +120,6 @@ const CaseStudiesPage = () => {
       {/* Hero Section */}
       <section className="relative navy-bg text-white py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
-                <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?_gl=1*rztq6n*_ga*MzgwMjAwMDY0LjE3NTYyMTkzMjI.*_ga_8JE65Q40S6*czE3NTYyMTkzMjIkbzEkZzEkdDE3NTYyMTkzNTUkajI3JGwwJGgw')] opacity-10 bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6"
@@ -405,7 +404,7 @@ const CaseStudiesPage = () => {
               Start Your Project
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" className="border-white text-black rounded-2xl px-8 py-3 text-lg hover:bg-white/10">
+            <Button variant="outline" className="border-white text-white rounded-2xl px-8 py-3 text-lg hover:bg-white/10">
               Schedule Consultation
             </Button>
           </motion.div>

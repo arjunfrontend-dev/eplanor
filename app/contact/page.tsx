@@ -1,60 +1,75 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 
 const ContactPage = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowSuccess(true);
     // Reset form
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setFormData({ name: "", email: "", company: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const offices = [
     {
-      city: 'San Francisco',
-      address: '123 Innovation Drive, Suite 200',
-      address2: 'San Francisco, CA 94105',
-      phone: '+1 (555) 123-4567',
-      email: 'sf@eplanor.com.au'
+      city: "San Francisco",
+      address: "123 Innovation Drive, Suite 200",
+      address2: "San Francisco, CA 94105",
+      phone: "+1 (555) 123-4567",
+      email: "sf@eplanor.com.au",
     },
     {
-      city: 'New York',
-      address: '456 Tech Avenue, Floor 15',
-      address2: 'New York, NY 10001',
-      phone: '+1 (555) 987-6543',
-      email: 'ny@eplanor.com.au'
+      city: "New York",
+      address: "456 Tech Avenue, Floor 15",
+      address2: "New York, NY 10001",
+      phone: "+1 (555) 987-6543",
+      email: "ny@eplanor.com.au",
     },
     {
-      city: 'Austin',
-      address: '789 Startup Lane, Building C',
-      address2: 'Austin, TX 73301',
-      phone: '+1 (555) 456-7890',
-      email: 'austin@eplanor.com.au'
-    }
+      city: "Austin",
+      address: "789 Startup Lane, Building C",
+      address2: "Austin, TX 73301",
+      phone: "+1 (555) 456-7890",
+      email: "austin@eplanor.com.au",
+    },
   ];
 
   return (
@@ -70,8 +85,7 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Let's Build Something{' '}
-            <span className="gradient-text">Amazing</span>
+            Let's Build Something <span className="gradient-text">Amazing</span>
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
@@ -79,7 +93,8 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Ready to transform your business? Get in touch with our team and let's discuss how we can help you achieve your goals.
+            Ready to transform your business? Get in touch with our team and
+            let's discuss how we can help you achieve your goals.
           </motion.p>
         </div>
       </section>
@@ -99,7 +114,9 @@ const ContactPage = () => {
                 Get In Touch
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Whether you have a project in mind, need technical consulting, or want to explore partnership opportunities, we'd love to hear from you.
+                Whether you have a project in mind, need technical consulting,
+                or want to explore partnership opportunities, we'd love to hear
+                from you.
               </p>
 
               <div className="space-y-6">
@@ -108,7 +125,9 @@ const ContactPage = () => {
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1F2937] mb-2">Email Us</h3>
+                    <h3 className="text-xl font-semibold text-[#1F2937] mb-2">
+                      Email Us
+                    </h3>
                     <p className="text-gray-600">hello@eplanor.com.au</p>
                     <p className="text-gray-600">support@eplanor.com.au</p>
                   </div>
@@ -116,23 +135,20 @@ const ContactPage = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                    <Phone className="w-6 h-6" />
+                    <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1F2937] mb-2">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">Mon-Fri 9AM-6PM PST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center text-white flex-shrink-0">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#1F2937] mb-2">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday - Sunday: Closed</p>
+                    <h3 className="text-2xl font-semibold text-[#1F2937] mb-2">
+                      Our Office
+                    </h3>
+                    <p className="text-xl font-semibold text-[#1F2937] ">
+                      Australia
+                    </p>
+                    <p className="text-gray-600">Suite 115 Ground Floor</p>
+                    <p className="text-gray-600">
+                      100 George Street 
+                    </p>
+ <p className="text-gray-600">PARRAMATTA NSW 2150</p>
                   </div>
                 </div>
               </div>
@@ -150,11 +166,14 @@ const ContactPage = () => {
                   <h3 className="text-2xl font-bold text-[#1F2937] mb-6">
                     Send us a message
                   </h3>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                        <Label
+                          htmlFor="name"
+                          className="text-sm font-medium text-gray-700"
+                        >
                           Full Name *
                         </Label>
                         <Input
@@ -168,9 +187,12 @@ const ContactPage = () => {
                           placeholder="John Doe"
                         />
                       </div>
-                      
+
                       <div>
-                        <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                        <Label
+                          htmlFor="email"
+                          className="text-sm font-medium text-gray-700"
+                        >
                           Email Address *
                         </Label>
                         <Input
@@ -185,9 +207,12 @@ const ContactPage = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
-                      <Label htmlFor="company" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="company"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Company Name
                       </Label>
                       <Input
@@ -200,9 +225,12 @@ const ContactPage = () => {
                         placeholder="Your Company"
                       />
                     </div>
-                    
+
                     <div>
-                      <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                      <Label
+                        htmlFor="message"
+                        className="text-sm font-medium text-gray-700"
+                      >
                         Message *
                       </Label>
                       <Textarea
@@ -216,7 +244,7 @@ const ContactPage = () => {
                         placeholder="Tell us about your project or how we can help..."
                       />
                     </div>
-                    
+
                     <Button
                       type="submit"
                       className="w-full gradient-bg text-white rounded-xl py-3 text-lg"
@@ -228,55 +256,6 @@ const ContactPage = () => {
                 </CardContent>
               </Card>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Offices Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-4">
-              Our Offices
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Visit us at one of our locations or connect with us remotely. We're here to help wherever you are.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.city}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full text-center hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center text-white mx-auto mb-4">
-                      <MapPin className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-[#1F2937] mb-4">
-                      {office.city}
-                    </h3>
-                    <div className="space-y-2 text-gray-600">
-                      <p>{office.address}</p>
-                      <p>{office.address2}</p>
-                      <p className="font-medium text-[#2563EB]">{office.phone}</p>
-                      <p className="font-medium text-[#2563EB]">{office.email}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -315,7 +294,9 @@ const ContactPage = () => {
               <div className="relative z-10 text-center text-white">
                 <MapPin className="w-16 h-16 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">We're Global</h3>
-                <p className="text-xl">Serving clients worldwide from our strategic locations</p>
+                <p className="text-xl">
+                  Serving clients worldwide from our strategic locations
+                </p>
               </div>
             </div>
           </motion.div>
@@ -335,9 +316,10 @@ const ContactPage = () => {
           </DialogHeader>
           <div className="text-center space-y-4">
             <p className="text-gray-600">
-              Thank you for reaching out! We've received your message and will get back to you within 24 hours.
+              Thank you for reaching out! We've received your message and will
+              get back to you within 24 hours.
             </p>
-            <Button 
+            <Button
               className="gradient-bg text-white rounded-xl"
               onClick={() => setShowSuccess(false)}
             >
@@ -366,7 +348,8 @@ const ContactPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Don't wait - let's discuss your project and see how eplanor can help you achieve your goals.
+            Don't wait - let's discuss your project and see how eplanor can help
+            you achieve your goals.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -379,7 +362,10 @@ const ContactPage = () => {
               Schedule a Call
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" className="border-white text-black rounded-2xl px-8 py-3 text-lg hover:bg-white/10">
+            <Button
+              variant="outline"
+              className="border-white text-black rounded-2xl px-8 py-3 text-lg hover:bg-white/10"
+            >
               View Our Work
             </Button>
           </motion.div>

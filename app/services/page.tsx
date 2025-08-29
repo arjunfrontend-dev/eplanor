@@ -1,81 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Lightbulb, Code, Cpu, Cloud, BarChart3, Shield, Users, Zap } from 'lucide-react';
+import { ArrowRight, Users, Zap, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import ServiceCard from '@/components/ui/service-card';
+import { services } from '@/lib/data';
 import Link from 'next/link';
 
 const ServicesPage = () => {
-  const services = [
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: 'Digital Strategy',
-      description: 'Comprehensive digital transformation roadmaps tailored to your business objectives.',
-      features: [
-        'Technology Assessment',
-        'Strategic Planning',
-        'ROI Analysis',
-        'Implementation Roadmap'
-      ]
-    },
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: 'Custom Development',
-      description: 'Bespoke software solutions built with cutting-edge technologies and best practices.',
-      features: [
-        'Web Applications',
-        'Mobile Development',
-        'API Integration',
-        'Legacy Modernization'
-      ]
-    },
-    {
-      icon: <Cpu className="w-8 h-8" />,
-      title: 'AI & Machine Learning',
-      description: 'Intelligent solutions that automate processes and unlock insights from your data.',
-      features: [
-        'Predictive Analytics',
-        'Natural Language Processing',
-        'Computer Vision',
-        'Process Automation'
-      ]
-    },
-    {
-      icon: <Cloud className="w-8 h-8" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and migration services for optimal performance.',
-      features: [
-        'Cloud Migration',
-        'Infrastructure Design',
-        'DevOps Implementation',
-        'Cost Optimization'
-      ]
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Data & Analytics',
-      description: 'Transform raw data into actionable insights with advanced analytics platforms.',
-      features: [
-        'Data Warehousing',
-        'Business Intelligence',
-        'Real-time Analytics',
-        'Data Visualization'
-      ]
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Cybersecurity',
-      description: 'Comprehensive security solutions to protect your digital assets and infrastructure.',
-      features: [
-        'Security Audits',
-        'Threat Detection',
-        'Compliance Management',
-        'Incident Response'
-      ]
-    }
-  ];
-
   const workflow = [
     {
       step: '1',
@@ -125,8 +58,8 @@ const ServicesPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Services That Drive{' '}
-            <span className="gradient-text">Innovation</span>
+            Powering Businesses with{' '}
+            <span className="gradient-text">Scalable Services</span>
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
@@ -147,7 +80,7 @@ const ServicesPage = () => {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Link href="/contact">
-              <Button variant="outline" className="border-white text-white rounded-2xl px-8 py-3 text-lg hover:bg-white hover:text-[#0A192F]">
+              <Button variant="outline" className="border-white text-black rounded-2xl px-8 py-3 text-lg hover:bg-white hover:text-[#0A192F]">
                 Get Consultation
               </Button>
             </Link>
@@ -175,43 +108,7 @@ const ServicesPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg group cursor-pointer">
-                  <CardHeader>
-                    <div className="w-16 h-16 gradient-bg rounded-2xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-xl font-semibold text-[#1F2937] group-hover:text-[#2563EB] transition-colors">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-6">
-                      {service.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <Zap className="w-4 h-4 text-[#2563EB] mr-2" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6">
-                      <Button className="w-full gradient-bg text-white rounded-xl group-hover:shadow-lg transition-shadow">
-                        Learn More
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <ServiceCard key={service.id} service={service} index={index} />
             ))}
           </div>
         </div>
@@ -285,7 +182,7 @@ const ServicesPage = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-6">
-                Why Choose NextEdge Services?
+                Why Choose eplanor Services?
               </h2>
               <div className="space-y-6">
                 {[
@@ -384,9 +281,9 @@ const ServicesPage = () => {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Button variant="outline" className="border-white text-white rounded-2xl px-8 py-3 text-lg hover:bg-white/10">
+            {/* <Button variant="outline" className="border-white text-black rounded-2xl px-8 py-3 text-lg hover:bg-white/10">
               View Case Studies
-            </Button>
+            </Button> */}
           </motion.div>
         </div>
       </section>
