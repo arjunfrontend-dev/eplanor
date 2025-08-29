@@ -25,7 +25,6 @@ interface ProductDetailClientProps {
     category: string;
     icon: string;
     image: string;
-    pricing: string;
     benefits: string[];
     features: string[];
   };

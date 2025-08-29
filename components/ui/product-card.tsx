@@ -64,11 +64,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             {product.description}
           </p>
           
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-lg font-semibold text-[#10B981]">
-              {product.pricing}
-            </span>
-          </div>
+         
           
           <Link href={`/products/${product.slug}`}>
             <Button className="w-full gradient-bg text-white rounded-xl group-hover:shadow-lg transition-shadow">
