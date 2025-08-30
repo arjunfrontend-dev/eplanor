@@ -128,7 +128,7 @@ const ContactPage = () => {
                     <h3 className="text-xl font-semibold text-[#1F2937] mb-2">
                       Email Us
                     </h3>
-                    <p className="text-gray-600">hello@eplanor.com.au</p>
+                    {/* <p className="text-gray-600">hello@eplanor.com.au</p> */}
                     <p className="text-gray-600">support@eplanor.com.au</p>
                   </div>
                 </div>
