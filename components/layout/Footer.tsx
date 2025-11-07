@@ -123,20 +123,9 @@ const Footer = () => {
               href="#"
               className="text-gray-300 hover:text-white text-sm transition-colors"
             >
-              Privacy Policy
+             powered by brandNbest
             </Link>
-            <Link
-              href="#"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Cookie Policy
-            </Link>
+           
           </div>
         </div>
       </div>
